@@ -1,4 +1,4 @@
-/* ojasv.tech — dark, minimal, terminal. all text, zero js, one accent. */
+/* ojasv.tech , dark, minimal, terminal. all text, zero js, one accent. */
 
 :root {
   --bg: #0a0a0b;
@@ -245,25 +245,6 @@ section h2 {
   overflow-wrap: anywhere;
 }
 .contact-list a:hover { color: var(--acc); border-bottom-color: var(--acc); }
-
-footer {
-  border-top: none;
-  position: relative;
-}
-footer::before {
-  content: "";
-  position: absolute;
-  left: 1.5rem;
-  right: 1.5rem;
-  top: 0;
-  height: 1px;
-  background: var(--line);
-}
-  max-width: var(--wrap);
-  margin: 0 auto;
-  padding: 1.6rem 1.5rem 2.4rem;
-}
-footer p { color: var(--faint); font-size: 0.76rem; }
 
 /* ---------- small screens ---------- */
 @media (max-width: 640px) {
