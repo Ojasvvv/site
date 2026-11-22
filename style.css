@@ -1,10 +1,10 @@
-/* ojasv.tech — dark, minimal, terminal. everything monospace, one accent, no framework. */
+/* ojasv.tech — dark, minimal, terminal. all text, zero js, one accent. */
 
 :root {
   --bg: #0a0a0b;
   --panel: #0e0e10;
   --ink: #dcdad2;
-  --dim: #83817a;
+  --dim: #8a887f;
   --faint: #4a4944;
   --line: #232320;
   --acc: #d8b45a;
@@ -76,7 +76,7 @@ nav {
 
 main { max-width: var(--wrap); margin: 0 auto; padding: 0 1.5rem; }
 
-section { padding: 5.5rem 0 4.5rem; border-top: 1px solid var(--line); }
+section { padding: 5.5rem 0 4.5rem; border-top: 1px solid var(--line); scroll-margin-top: 3.4rem; }
 section h2 {
   font-size: 0.82rem;
   font-weight: 400;
@@ -97,35 +97,34 @@ section h2 {
   text-align: center;
   border-top: none;
   gap: 0.35rem;
-  opacity: 0;
+  padding: 2rem 0;
 }
-.hero.ready { opacity: 1; transition: opacity 0.7s ease; }
 
 .ascii {
   font-family: var(--mono);
   line-height: 1;
   user-select: none;
   color: var(--ink);
+  white-space: pre;
   overflow: hidden;
-  max-width: 100%;
 }
 .ascii-hero {
-  font-size: 7.2px;
-  letter-spacing: 0;
-  margin-bottom: 2.2rem;
-  opacity: 0.95;
-  filter: contrast(1.05);
+  /* 150-char art: never wider than the screen */
+  font-size: min(3.6px, calc((100vw - 3rem) / 90));
+  margin-bottom: 2rem;
+  opacity: 0.97;
 }
-@media (min-width: 560px) { .ascii-hero { font-size: 8.6px; } }
-@media (min-width: 900px) { .ascii-hero { font-size: 9.6px; } }
+@media (min-width: 560px) { .ascii-hero { font-size: min(4.6px, calc((100vw - 3rem) / 90)); } }
+@media (min-width: 900px) { .ascii-hero { font-size: 5.6px; } }
+@media (min-width: 1200px) { .ascii-hero { font-size: 6.1px; } }
 
 .hero h1 {
   font-size: clamp(1.5rem, 4.5vw, 2.3rem);
   font-weight: 400;
   letter-spacing: 0.18em;
 }
-.tagline { color: var(--acc); margin-top: 0.6rem; }
-.sub { color: var(--dim); font-size: 0.84rem; letter-spacing: 0.06em; }
+.sub { color: var(--dim); font-size: 0.84rem; letter-spacing: 0.06em; margin-top: 0.5rem; text-wrap: balance; }
+.sub2 { color: var(--acc); font-size: 0.84rem; letter-spacing: 0.06em; text-wrap: balance; }
 .hero-links { margin-top: 1.8rem; display: flex; gap: 1.6rem; }
 .hero-links a {
   color: var(--dim);
@@ -149,9 +148,8 @@ section h2 {
 .num { color: var(--faint); font-size: 0.85rem; padding-top: 0.2rem; }
 .row h3 { font-size: 1.05rem; font-weight: 400; letter-spacing: 0.05em; color: var(--acc); }
 .row h3 .aka { color: var(--dim); }
-.row p.body, .row .body p { color: var(--dim); margin-top: 0.45rem; max-width: 44rem; }
-.row .body h3 { color: var(--acc); }
-.row:hover .body h3 { text-decoration: underline; text-underline-offset: 5px; text-decoration-color: var(--faint); }
+.row .body p { color: var(--dim); margin-top: 0.45rem; max-width: 44rem; }
+.row:hover h3 { text-decoration: underline; text-underline-offset: 5px; text-decoration-color: var(--faint); }
 .meta { font-size: 0.78rem; letter-spacing: 0.05em; color: var(--faint); margin-top: 0.7rem !important; }
 .award {
   display: inline-block;
@@ -161,7 +159,7 @@ section h2 {
   padding: 0.05rem 0.55rem;
   margin-top: 0.7rem;
 }
-.side { display: flex; flex-direction: column; gap: 0.55rem; align-items: flex-end; }
+.side { display: flex; flex-direction: column; gap: 0.55rem; align-items: flex-end; padding-top: 0.2rem; }
 .side a {
   color: var(--dim);
   text-decoration: none;
@@ -173,6 +171,16 @@ section h2 {
 .side a:hover { color: var(--acc); border-bottom-color: var(--acc); }
 .side .live { color: var(--ink); }
 .also { color: var(--faint); font-size: 0.85rem; margin-top: 2.4rem; }
+.stack-strip {
+  color: var(--dim);
+  font-size: 0.78rem;
+  margin-top: 1.2rem;
+  padding: 0.9rem 1rem;
+  border-left: 1px solid var(--acc);
+  background: var(--panel);
+  line-height: 2.1;
+  overflow-wrap: anywhere;
+}
 
 /* ---------- elsewhere ---------- */
 .tiles {
@@ -190,64 +198,48 @@ section h2 {
   transition: background 0.15s ease;
 }
 .tile:hover { background: var(--panel); }
-.tile .ascii {
-  font-size: 6.5px;
-  letter-spacing: 1.2px;
+.ascii-tile {
+  font-size: 3.2px;          /* 64-char art */
   color: #bcb9ae;
-  margin: 0 auto 1.1rem;
+  margin: 0 auto 1.2rem;
   width: fit-content;
-  min-height: 90px;
-  overflow: hidden;
 }
-.tile:hover .ascii { color: var(--ink); }
+@media (min-width: 400px) and (max-width: 559px) { .ascii-tile { font-size: 4.4px; } }
+@media (min-width: 560px) { .ascii-tile { font-size: 5.6px; } }
+@media (min-width: 900px) { .ascii-tile { font-size: 5.1px; } }
+@media (min-width: 1200px) { .ascii-tile { font-size: 5.5px; } }
+.tile:hover .ascii-tile { color: var(--ink); }
 .tile figcaption { color: var(--dim); font-size: 0.86rem; }
 .tile strong { display: block; color: var(--ink); font-weight: 400; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
 
-.video { margin-top: 4.5rem; text-align: center; }
-.video button {
-  background: none;
-  border: none;
-  color: var(--ink);
-  font-family: var(--mono);
-  cursor: pointer;
+.video { margin-top: 4rem; text-align: center; }
+.video iframe {
+  width: min(100%, 640px);
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
 }
-.video .frame {
-  display: inline-block;
-  border: 1px solid color-mix(in srgb, var(--acc) 60%, var(--line));
-  padding: 1rem 1.8rem;
-  text-align: left;
-  transition: border-color 0.15s ease, transform 0.15s ease;
-}
-.video button:hover .frame { border-color: var(--acc); transform: translateY(2px); }
-.video .l1, .video .l2 { display: block; font-size: 0.86rem; letter-spacing: 0.04em; }
-.video .l1 { color: var(--acc); }
-.video .l2 { color: var(--dim); margin-top: 0.3rem; }
 .video .credit {
   display: block;
   color: var(--faint);
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   margin-top: 0.7rem;
   letter-spacing: 0.04em;
-}
-.video iframe {
-  width: min(100%, 560px);
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--line);
-  border-radius: 2px;
 }
 
 /* ---------- contact ---------- */
 .contact-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.9rem 2rem;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
 }
+@media (min-width: 700px) { .contact-list { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 900px) { .contact-list { grid-template-columns: repeat(4, 1fr); } }
 .contact-list a, .contact-list span {
   color: var(--dim);
   text-decoration: none;
   font-size: 0.92rem;
   border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
 }
 .contact-list a:hover { color: var(--acc); border-bottom-color: var(--acc); }
 
@@ -265,13 +257,10 @@ footer p { color: var(--faint); font-size: 0.76rem; }
   nav { padding: 0.9rem 1.1rem; }
   .row { grid-template-columns: 1fr; gap: 0.5rem; }
   .num { padding-top: 0; }
-  .side { flex-direction: row; align-items: baseline; gap: 1.2rem; margin-top: 0.4rem; }
-  .ascii-hero { font-size: 5.2px; letter-spacing: 1px; }
-  .tagline, .sub { text-wrap: balance; }
+  .side { flex-direction: row; align-items: baseline; gap: 1.2rem; margin-top: 0.4rem; padding-top: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .cursor { animation: none; }
-  .video button:hover .frame { transform: none; }
 }
