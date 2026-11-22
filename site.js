@@ -10,7 +10,7 @@ const SRCS = {
   aristotle: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8575.jpg/500px-Aristotle_Altemps_Inv8575.jpg",
   cricket: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/A_flood_light_at_the_D_Y_Patil_Stadium_%285739171528%29.jpg/500px-A_flood_light_at_the_D_Y_Patil_Stadium_%285739171528%29.jpg",
   walk: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/23-365_Into_the_Darkness%2C_Walking_-_Flickr_-_Cliff_Johnson.jpg/500px-23-365_Into_the_Darkness%2C_Walking_-_Flickr_-_Cliff_Johnson.jpg",
-  concert: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Beach-Please-2022-crowd-stage-lights-night-performance.jpg/500px-Beach-Please-2022-crowd-stage-lights-night-performance.jpg",
+  concert: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Festivaloflights_%28260619545%29.jpeg/500px-Festivaloflights_%28260619545%29.jpeg",
 };
 
 const images = {};
