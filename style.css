@@ -96,8 +96,8 @@ section h2 {
   align-items: center;
   text-align: center;
   border-top: none;
-  gap: 0.35rem;
-  padding: 2rem 0;
+  gap: 0.25rem;
+  padding: 1.5rem 0;
 }
 
 .ascii {
@@ -111,17 +111,18 @@ section h2 {
 .ascii-hero {
   /* 150-char art: never wider than the screen */
   font-size: min(3.6px, calc((100vw - 3rem) / 90));
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
   opacity: 0.97;
 }
-@media (min-width: 560px) { .ascii-hero { font-size: min(4.6px, calc((100vw - 3rem) / 90)); } }
-@media (min-width: 900px) { .ascii-hero { font-size: 5.6px; } }
-@media (min-width: 1200px) { .ascii-hero { font-size: 6.1px; } }
+@media (min-width: 560px) { .ascii-hero { font-size: min(4.4px, calc((100vw - 3rem) / 90)); } }
+@media (min-width: 900px) { .ascii-hero { font-size: 5.2px; } }
+@media (min-width: 1200px) { .ascii-hero { font-size: 5.8px; } }
 
 .hero h1 {
   font-size: clamp(1.5rem, 4.5vw, 2.3rem);
   font-weight: 400;
   letter-spacing: 0.18em;
+  word-spacing: 0.9em;
 }
 .sub { color: var(--dim); font-size: 0.84rem; letter-spacing: 0.06em; margin-top: 0.5rem; text-wrap: balance; }
 .sub2 { color: var(--acc); font-size: 0.84rem; letter-spacing: 0.06em; text-wrap: balance; }
@@ -183,6 +184,22 @@ section h2 {
 }
 
 /* ---------- elsewhere ---------- */
+.art-strip {
+  text-align: center;
+  margin: 0 0 3rem;
+}
+.art-strip img {
+  width: min(100%, 460px);
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+}
+.art-strip figcaption {
+  color: var(--faint);
+  font-size: 0.76rem;
+  margin-top: 0.8rem;
+  letter-spacing: 0.08em;
+}
 .tiles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -199,15 +216,15 @@ section h2 {
 }
 .tile:hover { background: var(--panel); }
 .ascii-tile {
-  font-size: 3.2px;          /* 64-char art */
+  font-size: 4.8px;          /* 64-char art */
   color: #bcb9ae;
   margin: 0 auto 1.2rem;
   width: fit-content;
 }
-@media (min-width: 400px) and (max-width: 559px) { .ascii-tile { font-size: 4.4px; } }
-@media (min-width: 560px) { .ascii-tile { font-size: 5.6px; } }
+@media (min-width: 400px) and (max-width: 559px) { .ascii-tile { font-size: 5.6px; } }
+@media (min-width: 560px) { .ascii-tile { font-size: 6.0px; } }
 @media (min-width: 900px) { .ascii-tile { font-size: 5.1px; } }
-@media (min-width: 1200px) { .ascii-tile { font-size: 5.5px; } }
+@media (min-width: 1200px) { .ascii-tile { font-size: 5.4px; } }
 .tile:hover .ascii-tile { color: var(--ink); }
 .tile figcaption { color: var(--dim); font-size: 0.86rem; }
 .tile strong { display: block; color: var(--ink); font-weight: 400; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
